@@ -61,6 +61,19 @@ app_setup(){
 }
 
 
+nodejs_setup(){
+    dnf module disable nodejs -y &>>$LOGS_FILE
+    VALIDATE $? "Disabling NodeJS Default version"
+
+    dnf module enable nodejs:20 -y &>>$LOGS_FILE
+    VALIDATE $? "Enabling NodeJS 20"
+
+    dnf install nodejs -y &>>$LOGS_FILE
+    VALIDATE $? "Install NodeJS"
+
+    npm install  &>>$LOGS_FILE
+    VALIDATE $? "Installing dependencies"
+}
 systemd_setup(){
     cp $SCRIPT_DIR/$app_name.service /etc/systemd/system/$app_name.service
     VALIDATE $? "Created systemctl service"
