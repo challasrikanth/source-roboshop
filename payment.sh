@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source ./commonscript.sh
+
+app_name=rabbitmq
+
+check_root
+python_setup
+app_setup
+systemd_setup
+systemd_setup
+print_total_time
