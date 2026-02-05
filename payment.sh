@@ -2,7 +2,7 @@
 
 source ./commonscript.sh
 
-app_name=rabbitmq
+app_name=payment
 
 check_root
 python_setup
