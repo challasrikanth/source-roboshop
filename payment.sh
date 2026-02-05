@@ -1,11 +1,10 @@
 #!/bin/bash
 
-source ./commonscript.sh
-
+source ./common.sh
 app_name=payment
 
 check_root
-python_setup
 app_setup
+python_setup
 systemd_setup
 print_total_time
